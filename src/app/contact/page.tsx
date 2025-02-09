@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaPhoneAlt, FaEnvelope, FaClock, FaCommentDots, FaMapMarkerAlt, FaUser } from "react-icons/fa"; // Retirer Link si inutilisé
+import { FaPhoneAlt, FaEnvelope, FaClock, FaCommentDots, FaUser } from "react-icons/fa"; // Retirer Link si inutilisé
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 
