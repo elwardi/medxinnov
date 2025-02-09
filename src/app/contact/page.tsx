@@ -45,7 +45,7 @@ export default function Contact() {
         success: true, 
         message: 'Message envoyé avec succès ! Nous vous répondrons dans les 24h.' 
       });
-    } catch (error) {
+    } catch {
       setSubmitStatus({ 
         success: false, 
         message: 'Une erreur est survenue. Veuillez réessayer ou nous contacter directement.' 
@@ -55,28 +55,7 @@ export default function Contact() {
     }
   };
 
-  const contactInfo = [
-    {
-      icon: <FaMapMarkerAlt className="text-2xl text-[#D4AF37] mt-1" />,
-      title: "Adresse",
-      content: "Casablanca Tech Park<br />Bâtiment Innovation, étage 4<br />Casablanca, Maroc"
-    },
-    {
-      icon: <FaPhoneAlt className="text-2xl text-[#D4AF37] mt-1" />,
-      title: "Téléphone",
-      content: "+212 522 123 456<br />+212 600 789 012 (Urgences)"
-    },
-    {
-      icon: <FaEnvelope className="text-2xl text-[#D4AF37] mt-1" />,
-      title: "Email",
-      content: `<a href="mailto:youssefxp07@gmail.com" class="text-[#D4AF37] hover:underline">youssefxp07@gmail.com</a>`
-    },
-    {
-      icon: <FaClock className="text-2xl text-[#D4AF37] mt-1" />,
-      title: "Horaires",
-      content: "Lundi - Vendredi : 8h - 19h<br />Samedi : 9h - 13h"
-    }
-  ];
+ 
 
   return (
     <section className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-24 pt-36 px-6">

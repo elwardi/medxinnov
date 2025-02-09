@@ -83,7 +83,7 @@ export default function Services() {
 </h1>
           
           <p className="text-gray-600 text-xl max-w-2xl mx-auto">
-            Des solutions intégrées pour transformer l'écosystème de santé
+            Des solutions intégrées pour transformer l&écosystème; de santé
           </p>
         </motion.div>
 
