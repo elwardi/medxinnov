@@ -1,10 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaMapMarkerAlt, FaPhoneAlt, FaClock, FaEnvelope, FaCommentDots, FaUser } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaClock, FaCommentDots, FaMapMarkerAlt, FaUser } from "react-icons/fa"; // Retirer Link si inutilisé
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import Link from "next/link";
+
+// Définir un type pour le formulaire
+type FormData = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 export default function Contact() {
   const { 
@@ -12,7 +19,7 @@ export default function Contact() {
     handleSubmit, 
     formState: { errors }, 
     reset 
-  } = useForm();
+  } = useForm<FormData>(); // Utiliser le type FormData
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ 
@@ -20,7 +27,7 @@ export default function Contact() {
     message: string 
   } | null>(null);
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 

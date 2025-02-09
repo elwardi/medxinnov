@@ -7,6 +7,8 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import Link from "next/link";
+import Image from "next/image";
+
 
 const activities = [
   { title: "Faciliter l’accès aux produits et services de santé", image: "/telemedecine.jpg" },
@@ -60,13 +62,14 @@ export default function Activities() {
               >
                 {/* Image avec effet */}
                 <div className="relative w-full h-48 overflow-hidden">
-                  <img
-                    src={activity.image}
-                    alt={activity.title}
-                    className="w-full h-full object-cover transition duration-500 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition duration-500"></div>
-                </div>
+  <Image
+    src={activity.image}
+    alt={activity.title}
+    fill
+    className="object-cover transition duration-500 hover:scale-110"
+  />
+  <div className="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition duration-500"></div>
+</div>
 
                 {/* Texte de l’activité */}
                 <div className="p-4 text-center flex-grow flex items-center justify-center bg-white rounded-b-2xl">

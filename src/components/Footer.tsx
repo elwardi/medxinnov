@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Image from "next/image";
+
 
 export default function Footer() {
   return (
@@ -11,14 +13,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           {/* Logo et description */}
           <div>
-            <img 
-              src="/logo.png" 
-              alt="Logo" 
-              className="w-40 mx-auto md:mx-0 filter brightness-125" 
-            />
-            <p className="mt-4 text-gray-200 font-light italic">
-              "L'innovation au service de votre santé"
-            </p>
+            <Image 
+  src="/logo.png" 
+  alt="Logo" 
+  width={128} 
+  height={40}
+  className="w-32 mx-auto md:mx-0"
+/>
+
+<p className="mt-4 text-gray-400">
+  &quot;Nous innovons pour une meilleure santé numérique.&quot;
+</p>
+
           </div>
 
           {/* Liens rapides */}

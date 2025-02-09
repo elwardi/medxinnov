@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+  output: "export",
+  basePath: "/medxinnov",
+  assetPrefix: "/medxinnov/",
+  images: {
+    domains: ['localhost'], // Ajouter les domaines utilisés
+  },
 };
 
 export default nextConfig;

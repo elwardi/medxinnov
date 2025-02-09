@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,11 +41,13 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center space-x-2">
         <Link href="/">
-          <img 
-            src="/logo.png" 
-            alt="Logo Medex Innov" 
-            className="w-40 cursor-pointer hover:opacity-80 transition-opacity"
-          />
+        <Image 
+  src="/logo.png" 
+  alt="Logo Medex Innov" 
+  width={160} 
+  height={40}
+  className="w-40 cursor-pointer hover:opacity-80 transition-opacity"
+/>
         </Link>
         </div>
 

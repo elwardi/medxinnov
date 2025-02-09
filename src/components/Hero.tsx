@@ -62,8 +62,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Notre société est spécialisée dans le domaine de la santé <br /> faciliter l'accès aux produits et services de santé tout en encourageant l’innovation et la formation. <br />Nous proposons une large gamme de services.
-          </motion.p>
+ Notre société est spécialisée dans le domaine de la santé &apos; faciliter l&apos;accès...          </motion.p>
+          
 
           {/* Bouton centré en dessous */}
           <motion.a
