@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export', // Génère un site statique
+  basePath: '/medxinnov', // Ajoutez cette ligne
+  assetPrefix: '/medxinnov/', // Ajoutez cette ligne
   images: {
     unoptimized: true, // Désactive l'optimisation d'images
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/medxinnov' : '', // Remplacez par le nom de votre repo
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/medxinnov/' : '', // Ajoutez cette ligne
 };
 
 module.exports = nextConfig;

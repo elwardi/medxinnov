@@ -42,7 +42,7 @@ export default function Navbar() {
         <div className="flex items-center space-x-2">
         <Link href="/">
         <Image 
-  src="/logo.png" 
+  src={`${process.env.NODE_ENV === 'production' ? '/medxinnov' : ''}/logo.png`} 
   alt="Logo Medex Innov" 
   width={160} 
   height={40}
