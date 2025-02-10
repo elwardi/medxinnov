@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const images = [
   "/doctorh.jpg",
@@ -15,7 +16,7 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 4000); // Changement toutes les 7 secondes
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
@@ -25,15 +26,12 @@ export default function Hero() {
       {/* Image en arrière-plan en mode mobile */}
       <div className="absolute inset-0 md:hidden">
         <AnimatePresence mode="wait">
-          <motion.img
+          <Image
             key={images[currentImage]}
             src={images[currentImage]}
             alt="Illustration santé"
-            className="absolute inset-0 w-full h-full object-cover"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
+            fill
+            className="object-cover"
           />
         </AnimatePresence>
         <div className="absolute inset-0 bg-black/40 backdrop-blur-md"></div>
@@ -62,8 +60,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
- Notre société est spécialisée dans le domaine de la santé &apos; faciliter l&apos;accès...          </motion.p>
-          
+            Notre société est spécialisée dans le domaine de la santé &apos; faciliter l&apos;accès...
+          </motion.p>
 
           {/* Bouton centré en dessous */}
           <motion.a
@@ -82,22 +80,16 @@ export default function Hero() {
         {/* Image à droite en mode desktop */}
         <div className="w-full md:w-1/2 h-[450px] relative hidden md:block overflow-hidden">
           <AnimatePresence mode="wait">
-            <motion.img
+            <Image
               key={images[currentImage]}
               src={images[currentImage]}
               alt="Illustration santé"
-              className="absolute inset-0 w-full h-full object-cover"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
+              fill
+              className="object-cover"
             />
           </AnimatePresence>
         </div>
       </motion.div>
-      
-      
     </section>
-    
   );
 }

@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,36 +39,37 @@ export default function Navbar() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-        <Link href="/">
-        <Image 
-  src={`${process.env.NODE_ENV === 'production' ? '/medxinnov' : ''}/logo.png`} 
-  alt="Logo Medex Innov" 
-  width={160} 
-  height={40}
-  className="w-40 cursor-pointer hover:opacity-80 transition-opacity"
-/>
-        </Link>
+          <Link href="/">
+            <Image
+              src="/logo.png"
+              alt="Logo Medex Innov"
+              width={160}
+              height={40}
+              className="w-40 cursor-pointer hover:opacity-80 transition-opacity"
+            />
+          </Link>
         </div>
 
         {/* Menu desktop */}
         <ul className="hidden md:flex space-x-6">
-  {["Accueil", "Nos Services", "À Propos", "Contact"].map((item, index) => (
-    <li key={index}>
-      <Link
-        href={
-          item === "Accueil" ? "/" : 
-          item === "Nos Services" ? "/services" : // Lien direct vers /services
-          item === "Contact" ? "/contact" : // Lien direct vers /services
-          `/${item.toLowerCase().replace(/\s/g, "")}`
-        }
-        className="text-gray-700 hover:text-blue-500 transition-colors duration-300 relative group"
-      >
-        {item}
-        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
-      </Link>
-    </li>
-  ))}
-</ul>
+          {["Accueil", "Nos Services", "À Propos", "Contact"].map((item, index) => (
+            <li key={index}>
+              <Link
+                href={
+                  item === "Accueil" ? "/" :
+                  item === "Nos Services" ? "/services" :
+                  item === "Contact" ? "/contact" :
+                  `/${item.toLowerCase().replace(/\s/g, "")}`
+                }
+                className="text-gray-700 hover:text-blue-500 transition-colors duration-300 relative group"
+              >
+                {item}
+                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
         {/* Menu burger pour mobile */}
         <button
           className="md:hidden text-gray-700 focus:outline-none text-2xl"
@@ -97,8 +97,11 @@ export default function Navbar() {
               {["Accueil", "Nos Services", "À Propos", "Contact"].map((item, index) => (
                 <li key={index}>
                   <Link
-                    href={item === "Accueil" ? "/" :
-                          item === "Nos Services" ? "/services" :  `/${item.toLowerCase().replace(/\s/g, "")}`}
+                    href={
+                      item === "Accueil" ? "/" :
+                      item === "Nos Services" ? "/services" :
+                      `/${item.toLowerCase().replace(/\s/g, "")}`
+                    }
                     className="text-gray-700 hover:text-blue-500 transition-colors duration-300"
                     onClick={() => setIsOpen(false)}
                   >

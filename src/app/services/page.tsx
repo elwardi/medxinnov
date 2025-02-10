@@ -72,18 +72,17 @@ export default function Services() {
     <section className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-200 py-24 px-6 pt-40">
       <div className="container mx-auto">
         {/* En-tête */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
-  <span className="text-[#D4AF37]">L&apos;MEDEX</span> Innov Services
-</h1>
-          
+            <span className="text-[#D4AF37]">L&apos;MEDEX</span> Innov Services
+          </h1>
           <p className="text-gray-600 text-xl max-w-2xl mx-auto">
-            Des solutions intégrées pour transformer l&écosystème; de santé
+            Des solutions intégrées pour transformer l&apos;écosystème de santé
           </p>
         </motion.div>
 
@@ -115,29 +114,28 @@ export default function Services() {
 
         {/* CTA Final */}
         <section className="py-20 px-6">
-        <div className="container mx-auto max-w-2xl text-center">
-          <motion.div
-            className="bg-gradient-to-br from-[#D4AF37] to-[#B89E2E] p-1 rounded-2xl shadow-2xl"
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className="bg-white rounded-2xl p-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Prêt à transformer votre projet ?
-              </h2>
-              <p className="text-gray-600 mb-8">
-                Contactez nos experts pour une solution sur mesure
-              </p>
-              <Link 
-            href="/contact"
-            className="inline-block px-8 py-4 bg-[#D4AF37] text-white rounded-xl font-semibold
-                      hover:bg-[#B89E2E] transition-all duration-300 shadow-lg hover:shadow-xl"
-          >
-            Planifier une consultation
-          </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+          <div className="container mx-auto max-w-2xl text-center">
+            <motion.div
+              className="bg-gradient-to-br from-[#D4AF37] to-[#B89E2E] p-1 rounded-2xl shadow-2xl"
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="bg-white rounded-2xl p-12">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  Prêt à transformer votre projet ?
+                </h2>
+                <p className="text-gray-600 mb-8">
+                  Contactez nos experts pour une solution sur mesure
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-block px-8 py-4 bg-[#D4AF37] text-white rounded-xl font-semibold hover:bg-[#B89E2E] transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Planifier une consultation
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </section>
       </div>
     </section>
   );

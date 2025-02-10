@@ -9,7 +9,6 @@ import { Pagination, Navigation } from "swiper/modules";
 import Link from "next/link";
 import Image from "next/image";
 
-
 const activities = [
   { title: "Faciliter l’accès aux produits et services de santé", image: "/telemedecine.jpg" },
   { title: "Offrir des services de consultation et formation", image: "/pharmacie.jpg" },
@@ -42,7 +41,7 @@ export default function Activities() {
           Découvrez nos principales activités et services innovants
         </motion.p>
 
-        {/* Slider des activités (section conservée) */}
+        {/* Slider des activités */}
         <Swiper
           modules={[Pagination, Navigation]}
           spaceBetween={20}
@@ -62,14 +61,14 @@ export default function Activities() {
               >
                 {/* Image avec effet */}
                 <div className="relative w-full h-48 overflow-hidden">
-  <Image
-    src={activity.image}
-    alt={activity.title}
-    fill
-    className="object-cover transition duration-500 hover:scale-110"
-  />
-  <div className="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition duration-500"></div>
-</div>
+                  <Image
+                    src={activity.image}
+                    alt={activity.title}
+                    fill
+                    className="object-cover transition duration-500 hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition duration-500"></div>
+                </div>
 
                 {/* Texte de l’activité */}
                 <div className="p-4 text-center flex-grow flex items-center justify-center bg-white rounded-b-2xl">
@@ -82,7 +81,7 @@ export default function Activities() {
           ))}
         </Swiper>
 
-        {/* NOUVELLE SECTION CTA (ajoutée APRÈS le Swiper) */}
+        {/* Section CTA */}
         <motion.div
           className="mt-16 flex flex-col md:flex-row justify-center gap-8"
           initial={{ opacity: 0, y: 20 }}
@@ -91,19 +90,19 @@ export default function Activities() {
         >
           {/* Bouton Services */}
           <motion.div
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  className="relative group"
->
-  <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37] to-[#B89E2E] rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
-  <Link
-    href="/services" // Lien direct vers la page services
-    className="relative px-12 py-4 bg-[#D4AF37] text-white text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
-  >
-    <span className="text-xl">🔍</span>
-    Voir tous nos services
-  </Link>
-</motion.div>
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="relative group"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#D4AF37] to-[#B89E2E] rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
+            <Link
+              href={`${process.env.NODE_ENV === 'production' ? '/medxinnov' : ''}/services`}
+              className="relative px-12 py-4 bg-[#D4AF37] text-white text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+            >
+              <span className="text-xl">🔍</span>
+              Voir tous nos services
+            </Link>
+          </motion.div>
 
           {/* Bouton Contact */}
           <motion.div
@@ -113,7 +112,7 @@ export default function Activities() {
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-gray-600 to-gray-800 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
             <Link
-              href="/contact"
+              href={`${process.env.NODE_ENV === 'production' ? '/medxinnov' : ''}/contact`}
               className="relative px-12 py-4 bg-gray-800 text-white text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
             >
               <span className="text-xl">📧</span>

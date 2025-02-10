@@ -5,7 +5,6 @@ import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-br from-[#2D3748] via-[#4A5568] to-[#D4AF37] text-white py-10">
@@ -13,18 +12,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           {/* Logo et description */}
           <div>
-            <Image 
-  src="/logo.png" 
-  alt="Logo" 
-  width={128} 
-  height={40}
-  className="w-32 mx-auto md:mx-0"
-/>
-
-<p className="mt-4 text-gray-400">
-  &quot;Nous innovons pour une meilleure santé numérique.&quot;
-</p>
-
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={128}
+              height={40}
+              className="w-32 mx-auto md:mx-0"
+            />
+            <p className="mt-4 text-gray-400">
+              &quot;Nous innovons pour une meilleure santé numérique.&quot;
+            </p>
           </div>
 
           {/* Liens rapides */}
@@ -39,13 +36,13 @@ export default function Footer() {
                 { label: "À Propos", path: "/about" },
                 { label: "Contact", path: "/contact" }
               ].map((link, index) => (
-                <motion.li 
+                <motion.li
                   key={index}
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <Link
-                    href={link.path}
+                    href={`${process.env.NODE_ENV === 'production' ? '/medxinnov' : ''}${link.path}`}
                     className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
                   >
                     <span className="w-2 h-2 bg-[#D4AF37] rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
@@ -69,7 +66,7 @@ export default function Footer() {
               ].map((social, index) => (
                 <motion.a
                   key={index}
-                  href="https://www.linkedin.com/in/elwardi-youssef" target="_blank"
+                  href="#"
                   className="p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all"
                   whileHover={{ scale: 1.1, rotate: 10 }}
                   whileTap={{ scale: 0.9 }}
@@ -83,7 +80,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <motion.div 
+        <motion.div
           className="text-center text-gray-400 text-sm mt-10 pt-6 border-t border-white/10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

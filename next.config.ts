@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Génère un site statique
-  basePath: '/medxinnov', // Ajoutez cette ligne
-  assetPrefix: '/medxinnov/', // Ajoutez cette ligne
+  output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/medxinnov' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/medxinnov/' : '',
   images: {
-    unoptimized: true, // Désactive l'optimisation d'images
+    unoptimized: true,
   },
 };
 
