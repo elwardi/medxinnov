@@ -1,15 +1,15 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import Footer from "@/components/Footer";
+import "./globals.css";
+import Navbar from "@/components/Navbar";
 
-export default function Document() {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <Html>
-      <Head>
-        <base href={process.env.NODE_ENV === 'production' ? '/medxinnov/' : '/'} />
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
+    <html lang="fr">
+      <body className="flex flex-col min-h-screen">
+        <main className="flex-grow">{children}</main>
+        <Navbar />
+        <Footer />
       </body>
-    </Html>
+    </html>
   );
 }
